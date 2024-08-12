@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+  
+
+  
+<section class="products">
+  <div class="section-center clearfix">
+    <article class="products-info">
+      <div class="section-title">
+        <h3>Check Out</h3>
+        <h2>Our Products</h2>
+      </div>
+      <p class="products.text">
+        A perfume is something invisible and yet an unforgettable accessory..
+      </p>
+      <a href="products.html" class="btn">Inventory</a>
+    </article>
+    <article class="products-inventory clearfix">
+      {% for perfume in perfume_list %}
+      <div class="product">
+        
+        <img src="{{perfume.image.url}}" alt="single product" class="product-image">
+        <h4 class="product-title">{{perfume.name}}</h4>
+        
+        <p class="product-components" >{{perfume.content}}</p>
+      
+        
+      </div>
+      {% endfor %}
+        
+        
+      
+    </article>
+
+  </div>
+</section>
+<!--End Of Produ
+      
+      {% endblock body %}

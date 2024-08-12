@@ -1,0 +1,34 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<section>
+  <div class="sectoion-center clearfix">
+    <!-- About image -->
+    <article class="about-img">
+      
+      <div class="about-picture-container">
+        <img src="aboutus.image.url" alt="perfume composition" class="about-picture">
+      </div>
+      
+    </article>
+    <!-- About info -->
+    {% for item in about %}
+    <article class="about-info">
+      {% for item in about %}
+      <div class="section-title">
+        <h3>About Us</h3>
+        <h2>{{about.title}}</h2>
+      </div>
+      <p class="about-text">
+        {{about.content}}
+      </p>
+      {% endfor %}s
+      <a href="about.html" class="btn">Learn More</a>
+    </article>
+    
+  </div>
+</section>
+{% endblock body %}

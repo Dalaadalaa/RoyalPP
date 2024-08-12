@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+  
+
+<section>
+  <div class="sectoion-center clearfix">
+    <!-- About image -->
+    <article class="about-img">
+      <div class="about-picture-container">
+        <img src="{% static 'site_static/images/Abt.jpg'%}" alt="perfume composition" class="about-picture">
+      </div>
+    </article>
+    <!-- About info -->
+    <article class="about-info">
+      <div class="section-title">
+        <h3>About Us</h3>
+        <h2>Perfume Palace</h2>
+      </div>
+      <p class="about-text">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus libero at porro a cum sapiente neque sunt totam, fuga asperiores autem, cumque dicta ad et numquam voluptatum distinctio expedita. Ullam cum officia sunt veniam aliquam, provident ipsa sapiente. Minus tempore dolores omnis eius voluptatum aliquam culpa sapiente similique aperiam nesciunt.
+      </p>
+      <a href="about.html" class="btn">Learn More</a>
+    </article>
+  </div>
+</section>
+        <!-- skills section -->
+  
+  
+  <!-- Product section -->
+ <section class="products">
+    <div class="section-center clearfix">
+      <article class="products-info">
+        <div class="section-title">
+          <h3>Check Out</h3>
+          <h2>Our Products</h2>
+        </div>
+        <p class="products.text">
+          A perfume is something invisible and yet an unforgettable accessory..
+        </p>
+        <a href="products.html" class="btn">Explore</a>
+      </article>
+      <article class="products-inventory clearfix">
+        {% for perfume in perfume_list|slice:":3"%}
+      <div class="product">
+        
+        <img src="{{perfume.image.url}}" alt="single product" class="product-image">
+        <h4 class="product-title"><strong>{{perfume.name}}</strong></h4>
+        
+        <p class="product-components" >{{perfume.content}}</p>
+      
+        
+      </div>
+      {% endfor %}
+       
+          
+          
+        
+      </article>
+
+    </div>
+ </section>
+ <!--End Of Product -->
+  <!--Services section -->
+  <section class="services">
+    <!--Section Title -->
+    <div class="section-title services-title">
+      <h3>Explore</h3>
+      <h4>Our Services</h4>
+    </div>
+
+    <!--End Section Title -->
+    <div class="section-center clearfix">
+       <!--Single Card -->
+       <article class="service-card ">
+        <div class="service-img-container">
+          <img src="{% static 'site_static//images/lactose.jpg'%}" class="service-img" alt="single service">
+          <span class="service-icon">
+            <i class="fas fa-mortar-pestle fa-fw"></i>
+          </span>
+
+        </div>
+        <div class="service-info">
+          <h4>In-store Pickup</h4>
+          <p>Show someone you care with personalized messages or simpy intials. our engraved perfume bottles are the ultimate signature scent</p>
+          <a href="products.html" class="btn service-btn">Read More</a>
+
+        </div>
+       </article>
+        <!--End Single Card -->
+        <!--Single Card -->
+       <article class="service-card ">
+        <div class="service-img-container">
+          <img src="{% static 'site_static//images/lactose.jpg'%}" class="service-img" alt="single service">
+          <span class="service-icon">
+            <i class="fas fa-home fa-fw"></i>
+
+          </span>
+
+        </div>
+        <div class="service-info">
+          <h4>Home Delivery</h4>
+          <p>Show someone you care with personalized messages or simpy intials. our engraved perfume bottles are the ultimate signature scent</p>
+          <a href="products.html" class="btn service-btn">Read More</a>
+
+        </div>
+       </article>
+        <!--End Single Card -->
+        <!--Single Card -->
+       <article class="service-card ">
+        <div class="service-img-container">
+          <img src="{% static 'site_static//images/lactose.jpg'%}" class="service-img" alt="single service">
+          <span class="service-icon">
+            <i class="fas fa-handshake fa-fw"></i>
+
+
+          </span>
+
+        </div>
+        <div class="service-info">
+          <h4>In-store Shopping</h4>
+          <p>We will recomend new fragrance based on scent you already love, or be guided by our staff.</p>
+          <a href="products.html" class="btn service-btn">Read More</a>
+
+        </div>
+       </article>
+        <!--End Single Card -->
+    </div>
+  </section>
+  <!--End Of Services section -->
+      {% endblock body %}
